@@ -7,9 +7,9 @@ const Main = () => {
 
   const {onSent,recentPrompt,showResult,resultData,setInput,input,loading} = useContext(Context)
 
-  const handleEnterKey = (event) =>{
+  const  handleEnterKey = async (event) =>{
     if (event.key === 'Enter') {
-      onSent();
+      await onSent();
     }
   }
 
