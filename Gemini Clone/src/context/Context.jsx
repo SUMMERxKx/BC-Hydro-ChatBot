@@ -11,6 +11,10 @@ const ContextProvider = (props) => {
     const [showResult, setShowResult] = useState(false);
     const [loading, setLoading] = useState(false);
     const [resultData, setResultData] = useState("");
+
+    const typingEffect = (index,nextword) =>{
+
+    }
     
     const onSent = async(prompt) => {
         // setResultData("")
@@ -18,7 +22,18 @@ const ContextProvider = (props) => {
         setShowResult(true)
         setRecentPrompt(true)
         const response = await run(input)
-        setResultData(response)
+        let responseArr = response.split("**");
+        let newResponse;
+        for (let i = 0; i < responseArr.length; i++) {
+            if(i === 0 || i %2 !=1){
+                newResponse += responseArr[i];
+            }
+            else{
+                newResponse += "<b>"+responseArr[i]+"<b>"
+            }
+            
+        }
+        setResultData(newResponse)
         setLoading(false)
         setInput("")
     }

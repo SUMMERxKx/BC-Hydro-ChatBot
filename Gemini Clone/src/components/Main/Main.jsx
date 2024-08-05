@@ -1,12 +1,21 @@
 import './Main.css'
 import { assets } from '../../assets/assets'
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { Context } from '../../context/Context'
 
 const Main = () => {
 
-  const {onSent,recentPrompt,showResult,resultData,setInput,input} = useContext(Context)
-  console.log("Load main!!!")
+  const {onSent,recentPrompt,showResult,resultData,setInput,input,loading} = useContext(Context)
+
+  const handleEnterKey = (event) =>{
+    if (event.key === 'Enter') {
+      onSent();
+    }
+  }
+
+  useEffect(() =>{
+    window.addEventListener('keydown',handleEnterKey)
+  })
 
   return (
     <div className='main'>
@@ -48,11 +57,18 @@ const Main = () => {
         </div>
         <div className="result-data">
           <img src={assets.gemini_icon} alt="" />
-          <p dangerouslySetInnerHTML={{__html:resultData}}></p>
+          {loading
+          ?<div className="loader">
+            <hr />
+            <hr />
+            <hr />
+          </div>
+          :<p dangerouslySetInnerHTML={{__html:resultData}}></p>
+          }
         </div>
       </div>
     }
-
+      
         
         <div className="main-bottom">
             <div className="search-box">
