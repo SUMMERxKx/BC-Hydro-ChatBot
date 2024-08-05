@@ -14,8 +14,18 @@ const Main = () => {
   }
 
   useEffect(() =>{
-    window.addEventListener('keydown',handleEnterKey)
-  })
+    window.addEventListener('keydown',handleEnterKey);
+
+    return () =>{
+      window.removeEventListener('keydown',handleEnterKey);
+    };
+
+  }, []); // Empty dependency array ensures this effect runs once on mount
+
+  //Handle enter key needs to be fixed if the api is running smoothly with the onclick at the bottom if this page but when i use the handle
+  //enter key it doesnt work if i remove the remove event listner it the handlekey will run multiple times but i dont want that i just
+  //want to use it ones but if i use it ones the enter just sends an empty prompt 
+  //fix it
 
   return (
     <div className='main'>

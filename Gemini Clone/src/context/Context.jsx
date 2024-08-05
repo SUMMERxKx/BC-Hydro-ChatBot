@@ -17,23 +17,12 @@ const ContextProvider = (props) => {
     }
     
     const onSent = async(prompt) => {
-        // setResultData("")
+        //setResultData("")
         setLoading(true)
         setShowResult(true)
         setRecentPrompt(true)
         const response = await run(input)
-        let responseArr = response.split("**");
-        let newResponse;
-        for (let i = 0; i < responseArr.length; i++) {
-            if(i === 0 || i %2 !=1){
-                newResponse += responseArr[i];
-            }
-            else{
-                newResponse += "<b>"+responseArr[i]+"<b>"
-            }
-            
-        }
-        setResultData(newResponse)
+        setResultData(response)
         setLoading(false)
         setInput("")
     }
