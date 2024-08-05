@@ -13,15 +13,14 @@ const ContextProvider = (props) => {
     const [resultData, setResultData] = useState("");
     
     const onSent = async(prompt) => {
-
-        setResultData("")
+        // setResultData("")
         setLoading(true)
         setShowResult(true)
         setRecentPrompt(true)
         const response = await run(input)
-        setResultData = (response)
-        setLoading = (false)
-        setInput = ("")
+        setResultData(response)
+        setLoading(false)
+        setInput("")
     }
     
     const contextValue = {
@@ -35,8 +34,6 @@ const ContextProvider = (props) => {
         resultData,
         input,
         setInput
-        
-
     }
     return (
         <Context.Provider value={contextValue}>

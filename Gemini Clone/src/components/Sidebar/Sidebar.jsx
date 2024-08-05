@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./Sidebar.css";
 import { assets } from "../../assets/assets";
 
 const Sidebar = () => {
   const [extended, setExtended] = useState(false);
+
+  console.log("Load Sidebar!!!")
 
   return (
     <div className="sidebar">

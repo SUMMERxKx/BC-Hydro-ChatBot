@@ -1,11 +1,11 @@
-require('dotenv').config();
+// require('dotenv').config();
 import {
     GoogleGenerativeAI,
-    HarmCategory,
-    HarmBlockThreshold,
+    // HarmCategory,
+    // HarmBlockThreshold,
   }  from "@google/generative-ai"
   
-  const apiKey = process.env.ApiKey;
+  const apiKey = "AIzaSyD5S_1lkqjzHohfBnDWp9o3lGE9_Xroxt4";
   const genAI = new GoogleGenerativeAI(apiKey);
   
   const model = genAI.getGenerativeModel({
@@ -29,7 +29,7 @@ import {
   
     const result = await chatSession.sendMessage(prompt);
     console.log(result.response.text());
-    return response.text();
+    return result.response.text();
   }
   
    export default run;
