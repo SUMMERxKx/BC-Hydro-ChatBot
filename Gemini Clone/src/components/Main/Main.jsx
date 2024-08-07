@@ -9,7 +9,7 @@ const Main = () => {
 
   const  handleEnterKey = async (event) =>{
     if (event.key === 'Enter') {
-      await onSent();
+        this.form.submit();
     }
   }
 
@@ -22,8 +22,16 @@ const Main = () => {
 
   }, []); // Empty dependency array ensures this effect runs once on mount
 
-  //Might use form on submit isntead of div
 
+  //Handle enter key needs to be fixed if the api is running smoothly with the onclick at the bottom if this page but when i use the handle
+  //enter key it doesnt work if i remove the remove event listner it the handlekey will run multiple times but i dont want that i just
+  //want to use it ones but if i use it ones the enter just sends an empty prompt 
+  //fix it
+  
+  const handleSubmit = async(e) => {
+    e.preventDefault();
+    await onSent();
+  }
   return (
     <div className='main'>
       <div className="nav">
@@ -76,21 +84,20 @@ const Main = () => {
       </div>
     }
       
-        
-        <div className="main-bottom">
+        <form onSubmit={handleSubmit} className="main-bottom">
             <div className="search-box">
                 <input onChange={(e)=>setInput(e.target.value)} value={input} type="text" placeholder='Enter a prompt here' />
                 <div>
                     <img src={assets.gallery_icon} alt="" />
                     <img src={assets.mic_icon} alt="" />
-                    {input? <img onClick={()=> onSent()} src={assets.send_icon} alt="" />:null}
+                    {input? <button style={{border: 'none'}} type="submit"><img src={assets.send_icon} alt="" /></button>:null}
                 </div>
             </div>
             <p className="bottom-info">
                 Gemini may display inaccurate info, including about people, so double-check its resposes. Your privacy and Gemini Apps
             </p>
+            </form>
         </div>
-      </div>
     </div>
   )
 }
