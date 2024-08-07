@@ -5,6 +5,11 @@ import { Context } from '../../context/Context'
 
 const Main = () => {
 
+  const prompt1 = "Suggest beautiful places to see on an upcoming road trip"
+  const prompt2 = "Briefly summarize this concept: urban planning"
+  const prompt3 = "Brainstorm team bonding activities for out work retreat"
+  const prompt4 = "Imporve the readability of the following code"
+
   const {onSent,recentPrompt,showResult,resultData,setInput,input,loading} = useContext(Context)
 
   const  handleEnterKey = async (event) =>{
@@ -32,6 +37,8 @@ const Main = () => {
     e.preventDefault();
     await onSent();
   }
+  
+  
   return (
     <div className='main'>
       <div className="nav">
@@ -48,19 +55,19 @@ const Main = () => {
         </div>
         <div className="cards">
             <div className="card">
-                <p>Suggest beautiful places to see on an upcoming road trip</p>
+                <p>{prompt1}</p>
                 <img src={assets.compass_icon} alt="" />
             </div>
             <div className="card">
-                <p>Briefly summarize this concept: urban planning</p>
+                <p>{prompt2} </p>
                 <img src={assets.bulb_icon} alt="" />
             </div>
             <div className="card">
-                <p>Brainstorm team bonding activities for out work retreat</p>
+                <p> {prompt3} </p>
                 <img src={assets.message_icon} alt="" />
             </div>
             <div className="card">
-                <p>Imporve the readability of the following code</p>
+                <p>{prompt4} </p>
                 <img src={assets.code_icon} alt="" />
             </div>
         </div>
