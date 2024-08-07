@@ -4,6 +4,13 @@ import { useContext, useEffect } from 'react'
 import { Context } from '../../context/Context'
 
 const Main = () => {
+  //Future Improvements
+  //Add onclick on buttons to use that prompt 
+  //Add react typing instead of using setTimeout for more efficiency 
+  //Make a dark mode switch
+  //Customize the whole ui to make it a custom ai bot rather than a clone
+  
+  //Any more improvements add comments below this comment
 
   const prompt1 = "Suggest beautiful places to see on an upcoming road trip"
   const prompt2 = "Briefly summarize this concept: urban planning"
@@ -28,10 +35,7 @@ const Main = () => {
   }, []); // Empty dependency array ensures this effect runs once on mount
 
 
-  //Handle enter key needs to be fixed if the api is running smoothly with the onclick at the bottom if this page but when i use the handle
-  //enter key it doesnt work if i remove the remove event listner it the handlekey will run multiple times but i dont want that i just
-  //want to use it ones but if i use it ones the enter just sends an empty prompt 
-  //fix it
+  //Used form to fix the bug just used handle submit on the form to fix it 
   
   const handleSubmit = async(e) => {
     e.preventDefault();
