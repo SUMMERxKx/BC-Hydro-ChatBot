@@ -72,7 +72,8 @@ const ContextProvider = (props) => {
         resultData,
         input,
         setInput,
-        newChat
+        newChat,
+    
     }
     return (
         <Context.Provider value={contextValue}>
