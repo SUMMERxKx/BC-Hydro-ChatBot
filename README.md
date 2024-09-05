@@ -1,18 +1,15 @@
+# BC Hydro ChatBot
 
-# Gemini Clone
-
-This is a Gemini clone built with React, utilizing the Gemini API to provide similar functionality. This project aims to replicate the core features of the original Gemini application, allowing users to interact with its interface seamlessly.
+This is a BC Hydro-themed chatbot built with React and integrated with the Gemini API. The chatbot provides answers on topics related to BC Hydro’s services, programs, and sustainability efforts, helping users interact with relevant information seamlessly.
 
 ## Features
 
-- **User Interface**: Designed to mimic the Gemini interface using React components.
-- **API Integration**: Fetches data and performs actions using the Gemini API.
-- **Interactive Elements**: Includes features such as data retrieval, user authentication, and more, replicating the Gemini experience.
-- **Responsive Design**: Optimized for use on various screen sizes and devices.
+- **User Interface**: Custom BC Hydro-themed design built using React components.
+- **API Integration**: Uses the Gemini API to fetch data and respond to user prompts.
+- **Interactive Elements**: Provides information on BC Hydro topics like energy conservation and community programs.
+- **Responsive Design**: Optimized for all screen sizes and devices.
 
 ## Limitations
 
-- **No Image Support**: The current version does not support images due to limitations in the API.
-- **No Audio Functionality**: Audio features are not implemented as the API does not currently allow for audio processing.
-- **Limited API Access**: Some features may be restricted by the API’s capabilities and access levels.
-
+- **No Image/Audio Support**: Text-based interactions only.
+- **API Boundaries**: Some features may be limited by the API’s capabilities.
